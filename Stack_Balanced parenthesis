@@ -1,0 +1,37 @@
+import java.util.Stack;
+
+public class checkParanthesis {
+     
+        public static boolean isValid(String s) {
+            Stack<Character> stack=new Stack<>();
+            for(int i=0;i<s.length();i++){
+                char curr=s.charAt(i);
+                if(isOpening(curr)){
+                    stack.push(curr);
+                }else{
+                    if(s.isEmpty()){
+                        return false;
+                    }else if(!isMatching(stack.peek(),curr)){
+                        return false;
+                    }
+                    else{
+                        stack.pop();
+                    }
+                }
+            }
+            return stack.isEmpty();
+        }
+        private static boolean isMatching(Character peek, char curr) {
+           return  (peek=='('&& curr==')')||(peek=='{'&& curr=='}')||(peek=='['&& curr==']');
+        }
+        private static boolean isOpening(char curr) {
+            return(curr=='['||curr=='{'||curr=='(') ;
+                
+           
+        }
+        public static void main(String[] args) {
+            String s="{[()]";
+           System.out.println(isValid(s));
+        }
+    
+}
