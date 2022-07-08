@@ -1,0 +1,16 @@
+import java.util.*;
+
+public class unionoftwoarray {
+    public static void main(String[] args) {
+        Set<Integer> s=new HashSet<>();
+        int a[]={3,4,4,5};
+        int b[]={5,4,3};
+        for(int i:a){
+            s.add(i);
+        }
+        for(int j:b){
+            s.add(j);
+        }
+        System.out.println(s.size());
+    }
+}
