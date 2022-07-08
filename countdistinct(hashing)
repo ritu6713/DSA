@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class countdistinct {
+    
+    public static void main(String[] args) {
+        Set<Integer> s=new HashSet<>(); 
+        int a[]={4,5,5,6,6,7,7};
+          for(int i:a){
+            s.add(i);
+          }
+       
+         System.out.println(s.size());
+         System.out.println(s);
+    }
+}
