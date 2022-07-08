@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class intersectionoftwoarray {
+    
+    public static void main(String[] args) {
+        Set<Integer> s=new HashSet<>();
+        int a[]={5,10,15,5,10};
+        int b[]={15,10,4};
+         int count=0;
+        for(int i:a){
+            s.add(i);
+
+        }
+        for(int i:b){
+            if(s.contains(i)){
+                count++;
+                s.remove(i);
+            }
+        }
+        System.out.println(count);
+        System.out.println(s);
+
+    }
+}
