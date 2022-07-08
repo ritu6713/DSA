@@ -1,0 +1,58 @@
+import java.util.*;
+
+
+public class rotate90Matrix {
+    static void transposeMatrix(int a[][],int n){
+      //2end we transpose the matrix.
+        for (int  i = 0; i<n; i++) {
+            for (int j=i+1;j<n;j++) {
+              int temp[][]=new int[n][n];
+                temp[i][j] =a[i][j];
+                a[i][j]=a[j][i];
+                 a[j][i]=temp[i][j];
+   
+            }
+         }
+
+         // 3rd then we revere each column of the matrix.
+         int low=0;
+         int high=n-1;
+         for(int i=0;i<n;i++){
+             
+           while (high>low) {
+              int temp[]=a[low];
+              a[low]=a[high];
+              a[high]=temp;
+              low++;
+              high--;
+           }
+         }
+
+         for (int i = 0; i <n; i++) {
+       
+            for (int j = 0; j < n; j++) {
+                System.out.print(a[i][j]);
+            }
+            System.out.println();
+            
+           }
+    }
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        int n=sc.nextInt();
+       //first we take input  .
+        int a[][]=new int [n][n];
+        for(int i=0;i<n;i++){
+         for(int j=0;j<n;j++){
+             a[i][j]=sc.nextInt();
+         }
+        }
+    
+        transposeMatrix(a, n);
+       
+ 
+        sc.close();
+    }
+
+
+}
