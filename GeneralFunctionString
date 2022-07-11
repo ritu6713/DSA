@@ -1,0 +1,10 @@
+public class generalfunction {
+    
+    public static void main(String[] args) {
+        String str="rituraj";
+        System.out.println(str.length());
+        System.out.println(str.charAt(3));
+        System.out.println(str.substring(3));
+        System.out.println(str.substring(3,6));
+    }
+}
