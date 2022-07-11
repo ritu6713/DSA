@@ -1,0 +1,23 @@
+import java.util.Arrays;
+
+public class anagram {
+    public static void main(String[] args) {
+        String s1="aborte";
+        String s2="abrote";
+        if(s1.length()!=s2.length()){
+            return;
+        }
+
+        char a1[]=s1.toCharArray();//changing string into array.
+        Arrays.sort(a1);
+        s1=new String(a1);    //we have to modify because String s1="aborte" is immutable.
+
+        char a2[]=s2.toCharArray();
+        Arrays.sort(a2);
+        s2=new String(a2);
+
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s1.equals(s2));
+    }
+}
