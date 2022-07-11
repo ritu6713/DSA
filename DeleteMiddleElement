@@ -1,0 +1,43 @@
+import java.util.*;
+public class deleteMiddleElement {
+   
+    static void deleteElement(Stack<Integer>s){
+        int a[]=new int[s.size()];
+        int i=0;
+        //putting all the element of stack in array.
+        while (!s.isEmpty()) {
+           a[i]=s.pop();
+           i++;
+         }
+          int middleElement;
+          middleElement=(a.length/2);
+        
+         int temp=a[middleElement];
+         for (int j = 0; j < a.length; j++) {
+            if (a[j]!=temp) {
+                s.push(a[j]); 
+            }
+         }
+         while (!s.isEmpty()) {
+            System.out.println(s.peek());
+            s.pop();
+         }
+    }
+   
+   
+   
+   
+   
+    public static void main(String[] args) {
+        Stack<Integer> s= new Stack<Integer>();
+          s.push(1);
+          s.push(2);
+          s.push(3);
+          s.push(4);
+          s.push(5);
+          s.push(6);
+          s.push(7);
+          
+          deleteElement(s);
+    }
+}
