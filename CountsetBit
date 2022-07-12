@@ -1,0 +1,21 @@
+public class CountsetBit {
+   
+   static void countSet(int n){
+   int res=0;
+    while ( n>0) {
+        if ( (n&1)==1) {
+            res++;
+           
+        }
+        n= n>>1;
+    }
+    System.out.println(res);
+
+   }
+   
+   
+    public static void main(String[] args) {
+        int n=5;
+        countSet(n);  
+    }
+}
